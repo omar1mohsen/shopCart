@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCard from './ProductCard'
-import FetchData from '@/utilts/helpers/FetchData'
+import FetchData from '@/app/utilts/helpers/FetchData'
 import { error } from 'console'
 import Error from 'next/error'
 

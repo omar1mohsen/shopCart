@@ -1,5 +1,5 @@
 import { product } from '@/app/category/[slug]/components/Products'
-import FetchData from '@/utilts/helpers/FetchData'
+import FetchData from '@/app/utilts/helpers/FetchData'
 import Image from 'next/image'
 import React from 'react'
 import ProductDesc from './ProductDesc'

@@ -1,7 +1,7 @@
 import React from 'react'
 import CategoryCard from './CategoryCard'
 import { Category } from '@mui/icons-material'
-import FetchData from '@/utilts/helpers/FetchData'
+import FetchData from '@/app/utilts/helpers/FetchData'
 
 
 interface category {

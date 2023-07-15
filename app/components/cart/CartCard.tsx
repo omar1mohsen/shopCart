@@ -3,7 +3,7 @@ import { CartProduct } from './Cart'
 import Image from 'next/image'
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import handleTitle from '@/utilts/helpers/HandleTitle';
+import handleTitle from '@/app/utilts/helpers/HandleTitle';
 
 
 function CartCard({product, remove} : {product : CartProduct , remove:any} ) {

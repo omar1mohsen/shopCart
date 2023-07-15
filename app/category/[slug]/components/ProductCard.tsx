@@ -4,7 +4,7 @@ import { product } from "./Products";
 import Link from "next/link";
 import RatingComponent from "./RatingComponent";
 import AddCartBtn from "@/app/components/AddCartBtn";
-import handleTitle from "@/utilts/helpers/HandleTitle";
+import handleTitle from "@/app/utilts/helpers/HandleTitle";
 
 function ProductCard({ product }: { product: product }) {
 
