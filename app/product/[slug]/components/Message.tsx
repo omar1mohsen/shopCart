@@ -24,7 +24,7 @@ const Message = ({ message , showMsg ,  setShowMsg}:{message:string ,showMsg:boo
           Info
         <RxCross1 className="!h-4 !w-4  cursor-pointer space-y-2 " onClick={handleClose}/>
         </AlertTitle>
-         {message} — <strong><Link  href='/auth/signin'>Login</Link></strong>
+         {message} — <strong><Link scroll={false}  href='/auth/signin'>Login</Link></strong>
       </Alert>
     </div>
     </Modal>

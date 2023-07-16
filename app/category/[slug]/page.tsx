@@ -7,7 +7,7 @@ function page({params}: {params: { slug: string }}) {
   return (
     <>
     <Navbar />
-    <main className='px-10'>
+    <main className='sm:px-10'>
     <SaleHero category={params.slug} />
     <Products category={params.slug} />
     </main>

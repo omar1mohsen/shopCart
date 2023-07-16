@@ -21,7 +21,7 @@ async function Products({category} : {category : string}) {
   const products = await FetchData(`${category === "All" ? process.env.NEXT_PUBLIC_ALL_PRODUCTS_URL : `https://fakestoreapi.com/products/category/${category}` }`)
   return (
   <div>
-      <h3 className='my-7 capitalize font-bold text-2xl md:text-3xl'>{category} Product For You!</h3>
+      <h3 className='my-7 capitalize font-bold text-lg  sm:text-2xl md:text-3xl'>{category} Product For You!</h3>
     <div className='my-5 flex flex-row  gap-y-10 flex-wrap '>
       {products.map((product : product)=>{
         return(      

@@ -20,13 +20,13 @@ function CategoryCard({ category }: { category: string }) {
       : womens;
   };
   return (
-    <Link
+    <Link scroll={false}
       href={`/category/${category}`}
-      className="w-1/5 h-[250px] relative top-0 hover:top-[-8px]  category-card "
+      className="w-full h-full sm:w-1/5 sm:h-[250px] relative top-0 hover:top-[-8px]  category-card "
     >
       <Image src={handleImages()} alt="" className="w-full h-full rounded" />
-      <div className="absolute top-5 left-0 text-[var(--main-color)] capitalize text-2xl text-center w-full ">
-        <h3 className="py-3 px-1 md:px-3 rounded bg-slate-300 text-xs w-full font-bold md:text-lg lg:text-xl">{category}</h3>
+      <div className="absolute top-7 left-0 text-[var(--main-color)] capitalize text-2xl text-center w-full ">
+        <h3 className="py-3 px-1 md:px-3 rounded bg-slate-300 text-center text-lg sm:text-sm w-full font-bold lg:text-xl">{category}</h3>
       </div>
     </Link>
   );

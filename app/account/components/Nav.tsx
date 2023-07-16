@@ -27,7 +27,7 @@ function Nav() {
   return (
     <>
       <nav className="flex items-center fixed top-0 left-0  w-full justify-between flex-wrap bg-white bg-opacity-80 p-3 z-50 ">
-        <Link href="/" className="inline-flex items-center p-2 mr-8 ">
+        <Link scroll={false} href="/" className="inline-flex items-center p-2 mr-8 ">
           <Image
             width={50}
             height={50}

@@ -17,7 +17,7 @@ async function  Categories() {
   return (
     <main className='py-7 px-4'>
         <h3 className='text-[var(--main-color)] font-bold text-lg md:text-2xl my-3'>Shop Our Top Categories</h3>
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-col justify-center items-center space-y-4  sm:flex-row sm:space-x-4 sm:space-y-0">
         <CategoryCard category='All'  />
         {categories.map((category : any )=>{
            return <CategoryCard key={category.id} category={category}  />

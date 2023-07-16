@@ -10,7 +10,7 @@ function AuthNavgiate({link} : {link : string}) {
         }
     }
   return (
-    <Link href={`${link === "Sign Up" ? "/auth/signup" : "/auth/signin" }`} 
+    <Link scroll={false} href={`${link === "Sign Up" ? "/auth/signup" : "/auth/signin" }`} 
     className='my-3 block text-center '>
         {handleContent()}
     </Link>
