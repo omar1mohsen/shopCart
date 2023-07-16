@@ -60,7 +60,7 @@ const handleSubmit = async (e : any)=>{
 }
   return (
     <>
-      <div className="p-8 w-2/3 mx-auto">
+      <div className="p-4 md:p-8 w-full md:w-2/3 mx-auto">
         <div className="bg-white rounded-t-lg p-8">
           <p className="text-center text-sm text-gray-400 font-light">
             Sign In with
