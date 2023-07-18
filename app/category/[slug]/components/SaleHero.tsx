@@ -10,7 +10,7 @@ function SaleHero({category} : {category : string}) {
             alt='Sale Image'
             className='w-full h-full my-10 rounded-xl'
             />
-            <div className="sale-dec absolute top-36 left-4 md:left-8 lg:left-12 bg-white/80 px-3 w-full md:w-fit  md:ps-5 md:pe-40 py-5 rounded  ">
+            <div className="sale-dec absolute top-16 left-0 md:top-24 md:left-8 lg:left-12 bg-white/80 px-3 w-full md:w-fit  md:ps-5 md:pe-40 py-5 rounded  ">
                 <h3 className='text-[var(--main-color)] text:text-md sm:text-xl md:text-3xl lg:text-4xl font-bold capitalize mb-3 md:mb-5 leading-normal '>Grap Up To 50 % Off On <br />
                   Selected {category} Products
                 </h3>

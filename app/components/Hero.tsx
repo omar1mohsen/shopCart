@@ -11,7 +11,7 @@ function Hero() {
         alt="Hero image"
         className="mr-4 w-full h-full"
       />
-      <div className="hero-dec absolute top-9 left-4 md:top-28 md:left-10">
+      <div className="hero-dec absolute top-9 left-4 md:top-16 md:left-10">
         <h1 className="text-[var(--main-color)] leading-normal tracking-wider	 font-bold text-3xl md:text-6xl ">
           Shopping and <br />
           Department Store{" "}

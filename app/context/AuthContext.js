@@ -34,22 +34,21 @@ export const AuthContextProvider = ({children})=>{
       }
 
       const singInByFacebook = async ()=>{
-        signInWithPopup(auth,facebookProvider).then(result=>{
-          setUser(result.user)
-          router.back()
+        signInWithPopup(auth,facebookProvider).then(res => {
+           setDoc(doc(db,'cart',res?.user.email),{
+            products : [] ,
+          })
         })
-        await setDoc(doc(db,'cart',user?.email),{
-          products : [] ,
-        })
+        router.push('/')
       }
 
       const singInByGoogle = async ()=>{
         signInWithPopup(auth,googleProvider).then(result=>{
-          setUser(result?.user)
-          router.back()
-        })
-        await setDoc(doc(db,'cart', user?.email),{
-          products : [] ,
+           setDoc(doc(db,'cart', result?.user.email),{
+            products : [] ,
+          })
+        }).then(()=>{
+          router.push('/')
         })
       }
     
