@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { Slide } from "@mui/material";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import Btn from "@/app/components/Btn";
+import Btn from "@/app/components/assets/Btn";
 
 const style = {
   width: 400,

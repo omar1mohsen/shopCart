@@ -10,6 +10,8 @@ import Cart from './cart/Cart';
 import { UserAuth } from '../context/AuthContext';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '@/firebase';
+import Logo from './assets/Logo';
+import { motion } from "framer-motion"
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -33,19 +35,13 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className='flex items-center fixed top-0 left-0  w-full justify-between flex-wrap bg-white bg-opacity-80 p-3 z-50 '>
-        <Link scroll={false} href='/' className='inline-flex items-center p-2 mr-8 '>
-            <Image 
-             width={50}
-             height={50}
-            src={require("/app/assets/images/logo.png")} 
-            alt='Logo image' 
-            className='mr-4'
-            />
-            <span className='text-xl text-[#0B4030] font-bold uppercase tracking-wide'>
-            shopcart
-            </span>
-        </Link>
+      <motion.nav
+      initial={{opacity:0 , y : "-100%"}}
+      transition={{duration : .5 , ease:"linear"}}
+      animate={{opacity:1 , y : "0"}}
+       className='flex items-center fixed top-0 left-0  w-full justify-between flex-wrap bg-white bg-opacity-80 p-3 z-50 '
+       >
+        <Logo/>
         <button
           className=' inline-flex p-3 hover:bg-white bg-[#023E2B] rounded lg:hidden text-white ml-auto hover:text-[#023E2B] outline-none'
           onClick={handleClick}
@@ -73,17 +69,17 @@ export const Navbar = () => {
         >
 
           <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:me-auto items-center   flex flex-col lg:h-auto'>
-            <Link scroll={false} href='/' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
+            <Link  href='/' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
                 Home
             </Link>
-            <Link scroll={false} href='/' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
-                Services
-            </Link>
-            <Link scroll={false} href='/' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
+            <Link href='/aboutus' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
                 About us
             </Link>
-            <Link scroll={false} href='/' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
+            <a  href={'/#contactus'} className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
                 Contact us
+            </a>
+            <Link href='/category/All' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
+                Services
             </Link>
           </div>
 
@@ -97,7 +93,7 @@ export const Navbar = () => {
             <AuthBtns />
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
           <Cart setOpen={setOpen} open={open} />
     </>

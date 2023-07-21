@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
-import AuthBtn from './AuthBtn';
+import AuthBtn from './assets/AuthBtn';
 import { UserAuth } from "@/app/context/AuthContext";
 import {BsPersonFill} from "react-icons/bs";
-import DropMenu from './DropMenu';
+import DropMenu from './assets/DropMenu';
 
 function AuthBtns() {
     const {user } = UserAuth()

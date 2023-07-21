@@ -13,18 +13,16 @@ const roboto = Roboto({
 export const metadata = {
   title: 'Shop Cart',
   description: 'E-commerce by create next app',
-  icons: {
-    icon: {
-      icon: "/public/fav-icon.png",
-    },
-},
 }
+
+
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
       <body className={roboto.className}>

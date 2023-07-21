@@ -9,7 +9,7 @@ function ProductImage({product} : {product : product}) {
     <motion.div
     initial={{opacity:0 , y: "100%" }}
     transition={{ duration: 1 }}
-    whileInView={{opacity:1,y: 0 }}
+    animate={{opacity:1,y: 0 }}
      className="w-full md:w-1/2 h-auto px-3 py-12  left-sec bg-slate-500/5 rounded-xl flex justify-center items-center"
      >
     <Image

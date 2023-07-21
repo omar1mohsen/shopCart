@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Slide } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import Btn from '@/app/components/Btn';
+import Btn from '@/app/components/assets/Btn';
 const style = {
   width: 400,
   bgcolor: 'background.paper',

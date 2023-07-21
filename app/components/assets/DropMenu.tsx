@@ -16,7 +16,7 @@ function DropMenu() {
   return (
     <div className={`drop-menu hidden font-semibold absolute bottom-[-170%] left-[-150%]`} >
     <span className="px-4  rounded mb-0.5 block bg-white/60 text-[var(--main-color)] hover:font-bold hover:bg-white transition hover:text-[var(--sec-color)]">
-      <Link scroll={false} href="/account">Account</Link>
+      <Link href="/account">Account</Link>
     </span>
     <span className="px-4  rounded mb-0.5 block bg-white/60 text-[var(--main-color)] hover:font-bold hover:bg-white transition hover:text-[var(--sec-color)]">
       <button
