@@ -12,6 +12,7 @@ import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '@/firebase';
 import Logo from './assets/Logo';
 import { motion } from "framer-motion"
+import ScrollTop from '../utilts/helpers/ScrollTop';
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -69,16 +70,22 @@ export const Navbar = () => {
         >
 
           <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:me-auto items-center   flex flex-col lg:h-auto'>
-            <Link  href='/' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
+            <Link
+            onLoadStart={ScrollTop}
+              href='/' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
                 Home
             </Link>
-            <Link href='/aboutus' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
+            <Link 
+            onLoadStart={ScrollTop}
+            href='/aboutus' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
                 About us
             </Link>
             <a  href={'/#contactus'} className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
                 Contact us
             </a>
-            <Link href='/category/All' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
+            <Link 
+            onLoadStart={ScrollTop}
+            href='/category/All' className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-[#023E2B] font-semibold items-center justify-center hover:bg-[#328b71] hover:text-white text-lg md:text-xl  transition duration-200' >
                 Services
             </Link>
           </div>

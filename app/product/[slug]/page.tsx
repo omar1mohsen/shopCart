@@ -2,6 +2,7 @@ import Navbar from '@/app/components/NavBar'
 import React from 'react'
 import MainPage from './components/MainPage'
 import Footer from '@/app/components/Footer'
+import ScrollTopBtn from '@/app/components/assets/ScrollTopBtn'
 
 
 function page({params} : {params : {slug : string}}) {
@@ -10,6 +11,7 @@ function page({params} : {params : {slug : string}}) {
        <Navbar />
        <MainPage productId={params.slug} />
        <Footer/>
+       <ScrollTopBtn/>
     </>
   )
 }

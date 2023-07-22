@@ -1,11 +1,11 @@
 "use client"
-
 import React, { useState } from "react";
 import FacebookBtn from "../components/FacebookBtn";
 import GoogleBtn from "../components/GoogleBtn";
 import AuthNavgiate from "../components/AuthNavgiate";
 import { useRouter } from 'next/navigation';
 import { UserAuth } from "@/app/context/AuthContext";
+import IsValidEmail from "@/app/utilts/helpers/IsVaildEmail";
 
 
 function page() {
@@ -13,19 +13,16 @@ function page() {
 const [password , setPassword] = useState<any>('')
 const [conPassword , setConPassword] = useState('')
 const [error , setError] = useState('')
-const { signUp } = UserAuth()
+const { signUp , user } = UserAuth()
 const [emailError , setEmailError] = useState<any>()
 const [passError , setPassError] = useState<any>()
 const router = useRouter()
 
 
- function isValidEmail(email : string) {
-    return /\S+@\S+\.\S+/.test(email);
-  }
 
   const checkEmail = (e : any)=>{
 
-    if (!isValidEmail(e.target.value)) {
+    if (!IsValidEmail(e.target.value)) {
       setEmailError('Please enter a valid email.');
     } else {
       setEmailError(null);
@@ -51,7 +48,7 @@ const handleSubmit = async (e : any)=>{
     if(password.password === conPassword){
       try{
           await signUp(email.email,password.password)
-          router.push('/')
+           router.back() 
         } catch(e : any){
           setError(e.message)
       }
@@ -90,6 +87,7 @@ const handleSubmit = async (e : any)=>{
                 className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
                 id="Email"
                 type="email"
+                name="Email"
                 placeholder="Email"
                 onChange={checkEmail}
               />
@@ -109,8 +107,9 @@ const handleSubmit = async (e : any)=>{
             <div className="relative mt-3">
               <input
                 className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
-                id="username"
+                id="password"
                 type="password"
+                name="password"
                 placeholder="Password"
                 onChange={checkPassword}
               />
@@ -129,8 +128,9 @@ const handleSubmit = async (e : any)=>{
             <div className="relative mt-3">
               <input
                 className="appearance-none border pl-12 border-gray-100 shadow-sm focus:shadow-md focus:placeholder-gray-600  transition  rounded-md w-full py-3 text-gray-600 leading-tight focus:outline-none focus:ring-gray-600 focus:shadow-outline"
-                id="username"
+                id="conpassword"
                 type="password"
+                name="conpassword"
                 placeholder="Password confirmation"
                 onChange={(e)=>{setConPassword(e.target.value)}}
               />

@@ -39,7 +39,7 @@ export const AuthContextProvider = ({children})=>{
             products : [] ,
           })
         })
-        router.push('/')
+        router.back()
       }
 
       const singInByGoogle = async ()=>{
@@ -48,7 +48,7 @@ export const AuthContextProvider = ({children})=>{
             products : [] ,
           })
         }).then(()=>{
-          router.push('/')
+          router.back()
         })
       }
     

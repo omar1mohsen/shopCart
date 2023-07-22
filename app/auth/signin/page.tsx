@@ -1,11 +1,11 @@
 "use client"
-
 import React, { useState } from "react";
 import FacebookBtn from "../components/FacebookBtn";
 import GoogleBtn from "../components/GoogleBtn";
 import AuthNavgiate from "../components/AuthNavgiate";
 import { useRouter } from 'next/navigation';
 import { UserAuth } from "@/app/context/AuthContext";
+import IsValidEmail from "@/app/utilts/helpers/IsVaildEmail";
 
 
 
@@ -19,13 +19,9 @@ const [passError , setPassError] = useState<any>()
 const router = useRouter()
 
 
- function isValidEmail(email : string) {
-    return /\S+@\S+\.\S+/.test(email);
-  }
-
   const checkEmail = (e : any)=>{
 
-    if (!isValidEmail(e.target.value)) {
+    if (!IsValidEmail(e.target.value)) {
       setEmailError('Please enter a valid email.');
     } else {
       setEmailError(null);
@@ -43,14 +39,13 @@ const checkPassword = (e : any)=>{
 }
 
 
-
 const handleSubmit = async (e : any)=>{
   e.preventDefault()
   setError('')
   if(email.email && password.password){
       try{
           await signIn(email.email,password.password)
-          router.push('/')
+          router.back()
         } catch(e : any){
           setError(e.message)
       }

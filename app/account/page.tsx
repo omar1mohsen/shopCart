@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import Profile from './components/Profile'
 import ProtectRoute from './components/ProtectRoute'
 import Footer from '../components/Footer'
+import ScrollTopBtn from '../components/assets/ScrollTopBtn'
 
 function page() {
   return (
@@ -11,6 +12,7 @@ function page() {
         <Nav/>
         <Profile />
         <Footer/>
+        <ScrollTopBtn/>
     </ProtectRoute>
   )
 }

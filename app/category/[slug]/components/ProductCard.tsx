@@ -3,14 +3,14 @@ import React from "react";
 import { product } from "./Products";
 import Link from "next/link";
 import RatingComponent from "./RatingComponent";
-import AddCartBtn from "@/app/components/assets/AddCartBtn";
 import handleTitle from "@/app/utilts/helpers/HandleTitle";
+import ScrollTop from "@/app/utilts/helpers/ScrollTop";
 
 function ProductCard({ product }: { product: product }) {
 
   return (
     <div className="w-1/2 md:w-2/6 lg:w-3/12 px-2  sm:px-3 md:px-8 h-full rounded-lg">
-      <Link  href={`/product/${product.id}`}>
+      <Link onLoadStart={ScrollTop}  href={`/product/${product.id}`}>
         <Image
           src={product.image}
           width={100}

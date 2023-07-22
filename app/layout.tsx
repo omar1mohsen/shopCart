@@ -1,4 +1,3 @@
-
 import { AuthContextProvider } from './context/AuthContext'
 import './globals.css'
 import { Roboto } from 'next/font/google'

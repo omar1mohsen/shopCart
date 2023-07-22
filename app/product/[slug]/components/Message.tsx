@@ -3,6 +3,7 @@ import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import MuiModal from "@mui/material/Modal";
 import Link from "next/link";
+import ScrollTop from "@/app/utilts/helpers/ScrollTop";
 
 
 
@@ -24,7 +25,7 @@ const Message = ({ message , showMsg ,  setShowMsg}:{message:string ,showMsg:boo
           Info
         <RxCross1 className="!h-4 !w-4  cursor-pointer space-y-2 " onClick={handleClose}/>
         </AlertTitle>
-         {message} — <strong><Link  href='/auth/signin'>Login</Link></strong>
+         {message} — <strong><Link onLoadStart={ScrollTop}  href='/auth/signin'>Login</Link></strong>
       </Alert>
     </div>
     </Modal>
